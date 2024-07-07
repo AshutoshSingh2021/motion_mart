@@ -1,6 +1,6 @@
 import { Image, ScrollView, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Link } from "expo-router";
+import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
 import CustomButton from "../components/CustomButton";
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
-        <View className="w-full h-full items-center px-4">
+        <View className="w-full justify-center min-h-[85vh] items-center px-4">
           <Image
             source={images.logo}
             className="w-[140px] h-[90px]"
@@ -32,12 +32,12 @@ const App = () => {
             />
           </View>
           <Text className="text-sm font-pregular mt-7 text-gray-100 text-center">
-            Where creativity meets innovation: embark on a journey of limitless
-            exploration with Motion Mart
+            Unleash your creative potential: join Motion Mart for a journey of
+            infinite exploration and boundless adventure.
           </Text>
           <CustomButton
             title="Continue with Email"
-            handlePress={() => {}}
+            handlePress={() => router.push("/sign-in")}
             containerStyles="w-full mt-7"
           />
         </View>
